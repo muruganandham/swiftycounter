@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 import SwiftUI
 
-@available(iOS 16.0, *)
+@available(iOS 17.0, *)
 @available(macOS 14.0, *)
 public struct SwiftyCounter: View {
     
