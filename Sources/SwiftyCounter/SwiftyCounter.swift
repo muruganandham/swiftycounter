@@ -10,7 +10,11 @@ public struct SwiftyCounter: View {
     @State var minValue = 0
     @State var maxValue = 100
     @State var step = 10
-
+    
+    public init() {
+        self._rating = Binding.constant(0)
+    }
+    
     public var body: some View {
         HStack(alignment: .center) {
             Button(action: {
