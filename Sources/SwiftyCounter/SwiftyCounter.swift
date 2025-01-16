@@ -4,14 +4,14 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 @available(macOS 14.0, *)
-struct SwiftyCounter: View {
+public struct SwiftyCounter: View {
     
     @Binding var rating: Int
     @State var minValue = 0
     @State var maxValue = 100
     @State var step = 10
 
-    var body: some View {
+    public var body: some View {
         HStack(alignment: .center) {
             Button(action: {
                 withAnimation {
