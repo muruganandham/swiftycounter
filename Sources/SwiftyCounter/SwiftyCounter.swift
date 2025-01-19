@@ -11,8 +11,10 @@ public struct SwiftyCounter: View {
     @State var maxValue = 100
     @State var step = 10
     
-    public init() {
-        self._rating = Binding.constant(0)
+    // Public initializer with default values
+    public init(rating: Binding<Int>, step: Int = 10) {
+        self._rating = rating
+        self._step = State(initialValue: step)
     }
     
     public var body: some View {
@@ -20,7 +22,7 @@ public struct SwiftyCounter: View {
             Button(action: {
                 withAnimation {
                     rating -= step
-                    if rating < minValue {
+                    if rating <= minValue {
                         rating = minValue
                     }
                 }
@@ -39,7 +41,7 @@ public struct SwiftyCounter: View {
             Button(action: {
                 withAnimation {
                     rating += step
-                    if rating > maxValue {
+                    if rating >= maxValue {
                         rating = maxValue
                     }
                 }
